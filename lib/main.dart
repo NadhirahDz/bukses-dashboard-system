@@ -23,24 +23,36 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => const LoginPage(),
         '/home': (context) {
-          final args =
-              ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>;
+          final args = ModalRoute.of(context)!.settings.arguments
+              as Map<String, dynamic>;
           return HomeMenuPage(
             name: args['name'] ?? 'User',
             role: args['role'] ?? 'teacher_form4',
           );
         },
         '/admin': (context) {
-          final name = ModalRoute.of(context)!.settings.arguments as String;
-          return HomeMenuPage(name: name, role: 'admin');
+          final args = ModalRoute.of(context)!.settings.arguments
+              as Map<String, dynamic>;
+          return HomeMenuPage(
+            name: args['name'] ?? 'Pentadbir',
+            role: 'admin',
+          );
         },
         '/teacher4': (context) {
-          final name = ModalRoute.of(context)!.settings.arguments as String;
-          return HomeMenuPage(name: name, role: 'teacher_form4');
+          final args = ModalRoute.of(context)!.settings.arguments
+              as Map<String, dynamic>;
+          return HomeMenuPage(
+            name: args['name'] ?? 'Cikgu',
+            role: 'teacher_form4',
+          );
         },
         '/teacher5': (context) {
-          final name = ModalRoute.of(context)!.settings.arguments as String;
-          return HomeMenuPage(name: name, role: 'teacher_form5');
+          final args = ModalRoute.of(context)!.settings.arguments
+              as Map<String, dynamic>;
+          return HomeMenuPage(
+            name: args['name'] ?? 'Cikgu',
+            role: 'teacher_form5',
+          );
         },
         '/dashboard': (context) => const DashboardPage(),
         '/update': (context) => const UploadPage(),
